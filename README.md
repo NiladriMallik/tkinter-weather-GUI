@@ -3,7 +3,7 @@ A Python GUI to show the weather of a place using Tkinter and a weather API
 
 The [weatherstack](https://weatherstack.com/) API is called to get live weather details each time the program is executed. The date, time, temperature, humidity, UV index, etc change based on the current scenario.
 
-To get the weather of a place, create an account on weatherstack and generate your access key, which will be based on your choice of location.
+To get the weather of a place, create an account on weatherstack and generate your access key. After executing the code, you will be required to enter the name of a city in the console, which will call the API and get the current weather details of the city.
 
 The color of the UV index label is based on the UV index. As the value gets higher from 0 to 11+, the color will change from green, to yellow, orange, red and finally dark violet.
 
