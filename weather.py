@@ -15,10 +15,11 @@ root.title('Weather Now')
 root.iconbitmap('icons/weather.ico')
 root.configure(background='#03021c')
 
+cityChoice=input("Enter the name of a valid city: ")
 
 params={
     'access_key':'get-your-own-access-key',
-    'query':'Kolkata'
+    'query': cityChoice
 }
 
 uvIndexColors={
