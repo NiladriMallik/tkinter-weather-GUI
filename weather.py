@@ -22,6 +22,12 @@ params={
     'query': cityChoice
 }
 
+def errorPopup(error):
+    #this puts an error window on the screen
+    response=messagebox.showerror("Error",error)
+    Label(root,text=response).pack()
+    root.quit()
+
 uvIndexColors={
     0:['Low','green'],
     1:['Low','green'],
@@ -54,6 +60,10 @@ try:
     weather_desc=api['current']['weather_descriptions'][0]
     humidity=api['current']['humidity']
     feelsLike=api['current']['feelslike']
+    
+    precip=api['current']['precip']
+    pressure=api['current']['pressure']
+    weather_desc2=weatherDict[api['current']['weather_code']]
         
     #create labels for the respective values
     currDateLabel=Label(root,text='Date: {}'.format(currDate),font=("Helvetica",15),background='#03021c',foreground='#00f8fc')
@@ -75,6 +85,15 @@ try:
     
     humidityLabel=Label(root,text="{}\nHumidity".format(humidity),
                         font=('Helvetica',10,BOLD),background='#03021c',foreground='#00f8fc')
+    
+    precipLabel=Label(root,text="{} mm\nPrecipitation".format(precip),font=("Helvetica",10,BOLD),
+                      background="#03021c",foreground="#00f8fc")
+
+    pressureLabel=Label(root,text="{} mb\nPressure".format(pressure),font=("Helvetica",10,BOLD),
+                      background="#03021c",foreground="#00f8fc")
+    
+    weatherDescLabel2=Label(root,text="Weather description: {}".format(weather_desc2),font=("Helvetica",10,BOLD),
+                      background="#03021c",foreground="#00f8fc")
 
     #put the labels into grid
     cityLabel.grid(row=1,column=0,columnspan=2,padx=(20,20),pady=(20,0))
@@ -87,13 +106,19 @@ try:
 
     tempLabel.grid(row=1,column=5,pady=(20,0))
     feelsLikeLabel.grid(row=2,column=5)
+    
     uvIndexLabel.grid(row=4,column=3,columnspan=2)
     weatherDescLabel.grid(row=4,column=5,columnspan=2)
     humidityLabel.grid(row=4,column=7,columnspan=2,padx=(0,20))
     
+    precipLabel.grid(row=5,column=3,columnspan=2,pady=(20,20))
+    pressureLabel.grid(row=5,column=5,columnspan=2,pady=(20,20))
+    
+    weatherDescLabel2.grid(row=6,column=3,columnspan=3,pady=(0,20))
+    
     
 except Exception as e:
     api="Error"
-    print(e)
+    errorPopup(e)
 
 root.mainloop()
