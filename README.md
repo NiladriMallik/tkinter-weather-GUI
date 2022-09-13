@@ -10,4 +10,4 @@ The color of the UV index label is based on the UV index. As the value gets high
 The [weatherJSON.py](https://github.com/NiladriMallik/tkinter-weather-GUI/blob/main/weatherJSON.py) file contains a sample result for reference.
 
 Below is the screenshot of the GUI executed at a particular time:
-![screenshot](https://user-images.githubusercontent.com/51795733/189119761-daa81c13-311a-400e-9903-ed0d3a579c67.png)
+![image](https://user-images.githubusercontent.com/51795733/189821814-0558ef23-b6d9-4fcb-94b2-c6437f97ea1f.png)
